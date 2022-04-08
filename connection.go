@@ -1,7 +1,7 @@
 // Copyright (c) 2012, Sean Treadway, SoundCloud Ltd.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
-// Source code and contact info at http://github.com/streadway/amqp
+// Source code and contact info at http://github.com/joaoregis/amqp
 
 package amqp
 
@@ -23,7 +23,7 @@ const (
 
 	defaultHeartbeat         = 10 * time.Second
 	defaultConnectionTimeout = 30 * time.Second
-	defaultProduct           = "https://github.com/streadway/amqp"
+	defaultProduct           = "https://github.com/joaoregis/amqp"
 	defaultVersion           = "β"
 	// Safer default that makes channel leaks a lot easier to spot
 	// before they create operational headaches. See https://github.com/rabbitmq/rabbitmq-server/issues/1593.
@@ -588,7 +588,7 @@ func (c *Connection) heartbeater(interval time.Duration, done chan *Error) {
 // Convenience method to inspect the Connection.Properties["capabilities"]
 // Table for server identified capabilities like "basic.ack" or
 // "confirm.select".
-func (c *Connection) isCapable(featureName string) bool {
+func (c *Connection) IsCapable(featureName string) bool {
 	capabilities, _ := c.Properties["capabilities"].(Table)
 	hasFeature, _ := capabilities[featureName].(bool)
 	return hasFeature

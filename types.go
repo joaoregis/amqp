@@ -1,7 +1,7 @@
 // Copyright (c) 2012, Sean Treadway, SoundCloud Ltd.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
-// Source code and contact info at http://github.com/streadway/amqp
+// Source code and contact info at http://github.com/joaoregis/amqp
 
 package amqp
 
@@ -255,13 +255,13 @@ func (t Table) Validate() error {
 }
 
 // Heap interface for maintaining delivery tags
-type tagSet []uint64
+type TagSet []uint64
 
-func (set tagSet) Len() int              { return len(set) }
-func (set tagSet) Less(i, j int) bool    { return (set)[i] < (set)[j] }
-func (set tagSet) Swap(i, j int)         { (set)[i], (set)[j] = (set)[j], (set)[i] }
-func (set *tagSet) Push(tag interface{}) { *set = append(*set, tag.(uint64)) }
-func (set *tagSet) Pop() interface{} {
+func (set TagSet) Len() int              { return len(set) }
+func (set TagSet) Less(i, j int) bool    { return (set)[i] < (set)[j] }
+func (set TagSet) Swap(i, j int)         { (set)[i], (set)[j] = (set)[j], (set)[i] }
+func (set *TagSet) Push(tag interface{}) { *set = append(*set, tag.(uint64)) }
+func (set *TagSet) Pop() interface{} {
 	val := (*set)[len(*set)-1]
 	*set = (*set)[:len(*set)-1]
 	return val

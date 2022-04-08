@@ -1,7 +1,8 @@
-[![Build Status](https://api.travis-ci.org/streadway/amqp.svg)](http://travis-ci.org/streadway/amqp) [![GoDoc](https://godoc.org/github.com/streadway/amqp?status.svg)](http://godoc.org/github.com/streadway/amqp)
+[![Build Status](https://api.travis-ci.org/streadway/amqp.svg)](http://travis-ci.org/streadway/amqp) [![GoDoc](https://godoc.org/github.com/joaoregis/amqp?status.svg)](http://godoc.org/github.com/joaoregis/amqp)
 
 # Go RabbitMQ Client Library
 
+This project is a Fork from `streadway` library for AMQP. All credits for him.\
 This is an AMQP 0.9.1 client with RabbitMQ extensions in Go.
 
 ## Project Maturity
@@ -79,7 +80,7 @@ To run the integration tests, make sure you have RabbitMQ running on any host,
 export the environment variable `AMQP_URL=amqp://host/` and run `go test -tags
 integration`.  TravisCI will also run the integration tests.
 
-Thanks to the [community of contributors](https://github.com/streadway/amqp/graphs/contributors).
+Thanks to the [community of contributors](https://github.com/joaoregis/amqp/graphs/contributors).
 
 ## External packages
 
